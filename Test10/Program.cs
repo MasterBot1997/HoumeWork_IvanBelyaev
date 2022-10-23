@@ -13,7 +13,7 @@ Console.Write($"Введите трёхзначное число: {number} ");
 // Вариант где число задает пользователь
 // int number = Convert.ToInt32(Console.ReadLine());
 
-//Решение с меодом
+//Решение с методом
 
 // int DelSecondDigit(int num)
 // {
