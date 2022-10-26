@@ -20,32 +20,23 @@
 // задать метод, выдает ошибку и я смотрел на офиц сайте ее значение но не понял
 // в чем корень проблемы. 
 
-bool DayOfWeek(int number)
+bool DayOfWeek(int num)
 {
-    if (number == 6 || number == 7) return true;
+    if (num == 6 || num == 7) return true;
     return false;
+
 }
 
 Console.Write("Введите номер дня недели: ");
 int number = Convert.ToInt32(Console.ReadLine());
-// if (number < 0 || number > 7)
-// {
-//     Console.WriteLine("Такого дня неели нет");
-// }
-bool result = DayOfWeek(number);
-while (false)
-{
-    if (number < 1 || number > 7)
-    {
-        number = Convert.ToInt32(Console.ReadLine());
-    }
 
-    if (result)
-    {
-        Console.WriteLine("Yes");
-    }
-    else
-    {
-        Console.WriteLine("No");
-    }
+bool result = DayOfWeek(number);
+if (result) Console.WriteLine("Да");
+else if (number < 0 || number > 7)
+{
+    Console.WriteLine("Такого дня недели нет");
+}
+else if (number > 0 && number < 6)
+{   
+  Console.WriteLine("Нет");
 }
