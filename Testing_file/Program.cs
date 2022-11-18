@@ -51,17 +51,17 @@
 // Console.Write($"{result1} = {result2}");
 
 // 12321
-Console.Write("Напишите пятизначное число: ");
-int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Напишите пятизначное число: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-int Digit(int num)
-{
-    int a = num / 1000 % 10 * 10 + n / 10000;
-    int b = (num % 100 / 10 + n % 10 * 10) * 1000;
-    int c = num / 100 % 10 * 100;
-    int d = a + b + c;
-    return d;
-}
+// int Digit(int num)
+// {
+//     int a = num / 1000 % 10 * 10 + n / 10000;
+//     int b = (num % 100 / 10 + n % 10 * 10) * 1000;
+//     int c = num / 100 % 10 * 100;
+//     int d = a + b + c;
+//     return d;
+// }
 
-int result = Digit(n);
-Console.WriteLine($"{result}");
+// int result = Digit(n);
+// Console.WriteLine($"{result}");
