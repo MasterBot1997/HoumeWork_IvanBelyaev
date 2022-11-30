@@ -94,30 +94,96 @@
 //------------------------------------------------------------------------------------
 // Создание массива с определением размера пользоватеелем и заполнением пользователем
 
-Console.WriteLine("Введите количество элементов массива : ");
-int num = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество элементов массива : ");
+// int num = Convert.ToInt32(Console.ReadLine());
 
-int[] NameArray(int size)
+// int[] NameArray(int size)
+// {
+//  int[] array = new int[size];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//        array[i] = Convert.ToInt32(Console.ReadLine());
+//     }
+
+//     return array;
+// }
+
+// void PrintArray(int[] array)
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i < array.Length - 1) Console.Write(array[i] + ",");
+//         else Console.Write(array[i]);
+//     }
+//     Console.Write("]");
+// }
+
+// int[] nameArray = NameArray(num);
+// PrintArray(nameArray);
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
- int[] array = new int[size];
-    for (int i = 0; i < array.Length; i++)
-    {
-       array[i] = Convert.ToInt32(Console.ReadLine());
-    }
+    int[,] matrix = new int[rows, columns];
+    Random rnd = new Random();
 
-    return array;
+    for (int i = 0; i < matrix.GetLength(1); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(0); j++)
+        {
+            matrix[i, j] = rnd.Next(min, max + 1);
+        }
+
+    }
+    return matrix;
 }
 
-void PrintArray(int[] array)
+void PrintMatrix(int[,] matrix)
 {
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        if (i < array.Length - 1) Console.Write(array[i] + ",");
-        else Console.Write(array[i]);
+        Console.Write("|");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],2} |");
+            else Console.Write($"{matrix[i, j],2}");
+        }
+        Console.WriteLine(" |");
     }
-    Console.Write("]");
 }
 
-int[] nameArray = NameArray(num);
-PrintArray(nameArray);
+
+// void PrintArray(double[] array)
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i < array.Length - 1) Console.Write($"{array[i]},");
+//         else Console.Write($"{array[i]}");
+//     }
+//     Console.WriteLine("]");
+// }
+
+int[,] array2D = CreateMatrixRndInt(4, 1, 1, 5);
+PrintMatrix(array2D);
+// double[] arr = CreateArrayRndInt(array2D);
+// PrintArray(arr);
+
+double[] array = new double[array2D.GetLength(1)];
+
+for (int i = 0; i < array2D.GetLength(1); i++)
+{
+    double midSum = 0;
+    for (int j = 0; j < array2D.GetLength(1); j++)
+    {
+        int sum = 0;
+        for (int k = 0; k < array2D.GetLength(0); k++)
+        {
+            sum = array2D[k, j] + sum;
+            Console.Write($"{sum}");
+        }
+        midSum = sum / array2D.GetLength(0);
+        array[i] = Math.Round(midSum, 2);
+    }
+}
