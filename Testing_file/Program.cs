@@ -190,43 +190,83 @@
 //
 //================================================================================
 
-int[,,] CreateMatrix3DRndInt(int rows, int columns, int depth, int min, int max)
+// int[,,] CreateMatrix3DRndInt(int rows, int columns, int depth, int min, int max)
+// {
+//     int[,,] matrix = new int[rows, columns, depth];
+//     Random rnd = new Random();
+
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < matrix.GetLength(2); k++)
+//             {
+//                 matrix[i, j, k] = rnd.Next(min, max + 1);
+//             }
+
+//         }
+//     }
+//     return matrix;
+// }
+
+// void PrintMatrix3D(int[,,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         Console.Write("|");
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+
+//             for (int k = 0; k < matrix.GetLength(2); k++)
+//             {
+//                 if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j, k],3} ");
+//                 else Console.Write($"{matrix[i, j, k],3}");
+//             }
+
+//         }
+//         Console.WriteLine(" |");
+//     }
+// }
+
+// int[,,] matrix3D = CreateMatrix3DRndInt(3, 3, 3, 1, 10);
+// PrintMatrix3D(matrix3D);
+
+//================================================================
+
+
+int[] a = { 1, 2, 3, 4, 5 };
+
+void Revers(int[] array)
 {
-    int[,,] matrix = new int[rows, columns, depth];
-    Random rnd = new Random();
-
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int temp = 0;
+    for (int i = 0; i <= array.Length - 1; i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j <= array.Length - 2; j++)
         {
-            for (int k = 0; k < matrix.GetLength(2); k++)
+            if (array[i] > array[j + 1])
             {
-                matrix[i, j, k] = rnd.Next(min, max + 1);
+                temp = array[i];
+                array[i] = array[j + 1];
+                array[j + 1] = array[i];
             }
-
         }
+        temp = array[i];
+        array[i] = array[array.Length - i - 1];
+        array[array.Length - i - 1] = temp;
     }
-    return matrix;
 }
 
-void PrintMatrix3D(int[,,] matrix)
+void PrintArray(int[] array)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write("|");
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            
-            for (int k = 0; k < matrix.GetLength(2); k++)
-            {
-                if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j, k],3} ");
-                else Console.Write($"{matrix[i, j, k],3}");
-            }
-            
-        }
-        Console.WriteLine(" |");
+        if (i < array.Length - 1) Console.Write($"{array[i]},");
+        else Console.Write($"{array[i]}");
     }
+    Console.WriteLine("]");
 }
 
-int[,,] matrix3D = CreateMatrix3DRndInt(3, 3, 3, 1, 10);
-PrintMatrix3D(matrix3D);
+PrintArray(a);
+Revers(a);
+PrintArray(a);
