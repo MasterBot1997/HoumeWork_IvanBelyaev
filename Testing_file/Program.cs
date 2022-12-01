@@ -273,26 +273,6 @@ int[] maxNumber1(int[,] matrix)
     return max;
 }
 
-int[] maxNumber2(int[,] matrix)
-{
-    int[] max = new int[matrix.GetLength(1)];
-    for (int i = 0; i < matrix.GetLength(1); i++)
-    {
-        max[i] = matrix[1, i];
-    }
-    return max;
-}
-
-int[] maxNumber3(int[,] matrix)
-{
-    int[] max = new int[matrix.GetLength(1)];
-    for (int i = 0; i < matrix.GetLength(1); i++)
-    {
-        max[i] = matrix[2, i];
-    }
-    return max;
-}
-
 void PrintArray(int[] array)
 {
     Console.Write("[");
@@ -324,16 +304,8 @@ void Sort(int[] sort)
 int[,] array2D = CreateMatrixRndInt(4, 4, 1, 10);
 PrintMatrix(array2D);
 int[] array1 = maxNumber1(array2D);
-int[] array2 = maxNumber2(array2D);
-int[] array3 = maxNumber3(array2D);
 Console.WriteLine();
 PrintArray(array1);
-PrintArray(array2);
-PrintArray(array3);
 Sort(array1);
-Sort(array2);
-Sort(array3);
 Console.WriteLine();
 PrintArray(array1);
-PrintArray(array2);
-PrintArray(array3);
