@@ -41,29 +41,26 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] SortArray(int[,] matrix)
+void SortMatrix(int[,] matrix)
 {
-    int[,] newArr = new int[matrix.GetLength(0), matrix.GetLength(1)];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1) - 1; j++)
         {
-            int min = matrix[i, j];
-            if (j + 1 > matrix.GetLength(1))
+            int temp = default;
+            for (int z = 0; z <= matrix.GetLength(1) - 2; z++)
             {
-                if (min > matrix[i, j + 1])
+                if (matrix[i, z] < matrix[i, z + 1])
                 {
-                    min = matrix[i, j + 1];
-                    matrix[i, j + 1] = matrix[i, j];
-                    matrix[i, j] = min;
+                    temp = matrix[i, z];
+                    matrix[i, z] = matrix[i, z + 1];
+                    matrix[i, z + 1] = temp;
                 }
             }
-            else newArr[i, j] = matrix[i, j];
 
         }
 
     }
-    return newArr;
 }
 
 
@@ -71,5 +68,5 @@ int[,] SortArray(int[,] matrix)
 int[,] array2D = CreateMatrixRndInt(4, 4, 1, 10);
 PrintMatrix(array2D);
 Console.WriteLine();
-int[,] newArray = SortArray(array2D);
-PrintMatrix(newArray);
+SortMatrix(array2D);
+PrintMatrix(array2D);
