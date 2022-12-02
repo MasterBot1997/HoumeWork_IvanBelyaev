@@ -233,79 +233,80 @@
 
 //================================================================
 
-int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
-{
-    int[,] matrix = new int[rows, columns];
-    Random rnd = new Random();
+// int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+// {
+//     int[,] matrix = new int[rows, columns];
+//     Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            matrix[i, j] = rnd.Next(min, max + 1);
-        }
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = rnd.Next(min, max + 1);
+//         }
 
-    }
-    return matrix;
-}
+//     }
+//     return matrix;
+// }
 
-void PrintMatrix(int[,] matrix)
-{
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        Console.Write("|");
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3}|");
-            else Console.Write($"{matrix[i, j],3}");
-        }
-        Console.WriteLine(" |");
-    }
-}
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         Console.Write("|");
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3}|");
+//             else Console.Write($"{matrix[i, j],3}");
+//         }
+//         Console.WriteLine(" |");
+//     }
+// }
 
-int[] maxNumber1(int[,] matrix)
-{
-    int[] max = new int[matrix.GetLength(1)];
-    for (int i = 0; i < matrix.GetLength(1); i++)
-    {
-        max[i] = matrix[0, i];
-    }
-    return max;
-}
+// int[] maxNumber1(int[,] matrix)
+// {
+//     int[] max = new int[matrix.GetLength(1)];
+//     for (int i = 0; i < matrix.GetLength(1); i++)
+//     {
+//         max[i] = matrix[0, i];
+//     }
+//     return max;
+// }
 
-void PrintArray(int[] array)
-{
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (i < array.Length - 1) Console.Write($"{array[i]},");
-        else Console.Write($"{array[i]}");
-    }
-    Console.WriteLine("]");
-}
+// void PrintArray(int[] array)
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (i < array.Length - 1) Console.Write($"{array[i]},");
+//         else Console.Write($"{array[i]}");
+//     }
+//     Console.WriteLine("]");
+// }
 
-void Sort(int[] sort)
-{
-    int temp = default;
-    for (int i = 0; i <= sort.Length - 1; i++)
-    {
-        for (int j = 0; j <= sort.Length - 2; j++)
-        {
-            if (sort[j] < sort[j + 1])
-            {
-                temp = sort[j];
-                sort[j] = sort[j + 1];
-                sort[j + 1] = temp;
-            }
-        }
-    }
-}
+// void Sort(int[] sort)
+// {
+//     int temp = default;
+//     for (int i = 0; i <= sort.Length - 1; i++)
+//     {
+//         for (int j = 0; j <= sort.Length - 2; j++)
+//         {
+//             if (sort[j] < sort[j + 1])
+//             {
+//                 temp = sort[j];
+//                 sort[j] = sort[j + 1];
+//                 sort[j + 1] = temp;
+//             }
+//         }
+//     }
+// }
 
-int[,] array2D = CreateMatrixRndInt(4, 4, 1, 10);
-PrintMatrix(array2D);
-int[] array1 = maxNumber1(array2D);
-Console.WriteLine();
-PrintArray(array1);
-Sort(array1);
-Console.WriteLine();
-PrintArray(array1);
+// int[,] array2D = CreateMatrixRndInt(4, 4, 1, 10);
+// PrintMatrix(array2D);
+// int[] array1 = maxNumber1(array2D);
+// Console.WriteLine();
+// PrintArray(array1);
+// Sort(array1);
+// Console.WriteLine();
+// PrintArray(array1);
+//=================================================================================
