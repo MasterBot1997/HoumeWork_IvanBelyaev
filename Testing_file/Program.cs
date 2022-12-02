@@ -67,25 +67,25 @@
 // Console.WriteLine($"{result}");
 
 // Для домашки
-// double[] CreateArrayRndDouble(int size, int min, int max)
+// int[] CreateArrayRndint(int size, int min, int max)
 // {
-// double[] array = new double[size];
+// int[] array = new int[size];
 // Random rnd = new Random();
 // for (int i = 0; i < size; i++)
 // {
-// array[i] = rnd.NextDouble() * (max - min) + min;
+// array[i] = rnd.Nextint() * (max - min) + min;
 // }
 // return array;
 // }
 
 // Рандом массив дабл с округлением
-// double[] CreateArrayRndDouble(int size, int min, int max)
+// int[] CreateArrayRndint(int size, int min, int max)
 // {
-// double[] array = new double[size];
+// int[] array = new int[size];
 // Random rnd = new Random();
 // for (int i = 0; i < size; i++)
 // {
-// double num = rnd.NextDouble() * (max - min) + min;
+// int num = rnd.Nextint() * (max - min) + min;
 // array[i] = Math.Round(num, 1);
 // }
 // return array;
@@ -154,7 +154,7 @@
 // }
 
 
-// void PrintArray(double[] array)
+// void PrintArray(int[] array)
 // // {
 // //     Console.Write("[");
 // //     for (int i = 0; i < array.Length; i++)
@@ -167,14 +167,14 @@
 
 // // int[,] array2D = CreateMatrixRndInt(4, 1, 1, 5);
 // // PrintMatrix(array2D);
-// // double[] arr = CreateArrayRndInt(array2D);
+// // int[] arr = CreateArrayRndInt(array2D);
 // // PrintArray(arr);
 
-// // double[] array = new double[array2D.GetLength(1)];
+// // int[] array = new int[array2D.GetLength(1)];
 
 // for (int i = 0; i < array2D.GetLength(1); i++)
 // {
-//     double midSum = 0;
+//     int midSum = 0;
 //     for (int j = 0; j < array2D.GetLength(1); j++)
 //     {
 //         int sum = 0;
